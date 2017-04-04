@@ -1,0 +1,5 @@
+﻿{
+  "display_name": "Contact us",
+  "code_name": "ContactUs",
+  "endpoint_url": "/Widgets/ContactUsWidget"
+}

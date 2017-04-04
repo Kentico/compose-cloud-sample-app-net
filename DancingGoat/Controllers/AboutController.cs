@@ -15,7 +15,8 @@ namespace DancingGoat.Controllers
 
             var viewModel = new AboutUsViewModel
             {
-                FactViewModels = new List<FactAboutUsViewModel>()
+                FactViewModels = new List<FactAboutUsViewModel>(),
+                System = response.Item.System
             };
 
             int i = 0;

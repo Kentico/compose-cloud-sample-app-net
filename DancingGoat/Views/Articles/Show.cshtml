@@ -1,11 +1,13 @@
 ﻿@using DancingGoat.Helpers.Extensions
+@using KenticoCloud
+@using KenticoCloud.Compose
 @model DancingGoat.Models.Article
 
 @{
     ViewBag.Title = @Model.System.Name;
 }
 <article class="article-detail col-lg-9 col-md-12 article-detail-related-box">
-    <h2>@Model.Title)</h2>
+    <h2>@Model.Title</h2>
     <div class="article-detail-datetime">
         @Html.DateTimeFormatted(Model.PostDate, "D")
     </div>
@@ -18,6 +20,9 @@
         <div class="article-detail-content">
             @Html.Raw(Model.BodyCopy)
         </div>
+    </div>
+    <div class="row">
+        @Html.Kentico().EditableArea("ArticleContent", Model.System.Id)
     </div>
 </article>
 @if (Model.RelatedArticles.Any())

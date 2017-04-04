@@ -1,0 +1,5 @@
+﻿{
+  "display_name": "Latest blog posts",
+  "code_name": "LatestBlogPosts",
+  "endpoint_url": "/Widgets/LatestBlogPostsWidget"
+}

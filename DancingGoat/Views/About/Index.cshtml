@@ -1,7 +1,13 @@
-﻿@model DancingGoat.Models.AboutUsViewModel
+﻿@using KenticoCloud
+@using KenticoCloud.Compose
+@model DancingGoat.Models.AboutUsViewModel
 
 @{
     ViewBag.Title = Resources.DancingGoat.AboutUs;
 }
 
 @Html.DisplayForModel()
+
+<div class="row">
+    @Html.Kentico().EditableArea("AboutUsEditableArea", Model.System.Id)
+</div>

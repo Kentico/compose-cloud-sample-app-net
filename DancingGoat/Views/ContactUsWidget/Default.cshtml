@@ -1,0 +1,13 @@
+﻿@using DancingGoat.Helpers
+@model DancingGoat.Models.ContactUsForm
+
+<h2 class="h2 col-lg-12">Contact us</h2>
+@using (Html.BeginForm("SendMessage", "ContactUsWidget", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "ErrorLabel" })
+    @Html.ValidatedEditorFor(model => model.Name)
+    @Html.ValidatedEditorFor(model => model.Email)
+    @Html.ValidatedEditorFor(model => model.Message)
+    <input type="submit" value="Send" class="btn btn-primary" />
+}

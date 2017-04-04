@@ -11,6 +11,13 @@ namespace DancingGoat
 
             routes.MapMvcAttributeRoutes();
 
+
+            routes.MapRoute(
+                name: "Landing page",
+                url: "{urlslug}",
+                defaults: new { controller = "LandingPage", action = "View" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

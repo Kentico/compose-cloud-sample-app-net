@@ -50,6 +50,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="KenticoCloud.Compose, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KenticoCloud.Compose.0.9.17\lib\net461\KenticoCloud.Compose.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="KenticoCloud.Delivery, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\KenticoCloud.Delivery.4.1.0\lib\net45\KenticoCloud.Delivery.dll</HintPath>
     </Reference>
@@ -180,9 +184,12 @@
     <Compile Include="Controllers\CoffeesController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ContactUsWidgetController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LandingPageController.cs" />
+    <Compile Include="Controllers\LatestBlogPostsWidgetController.cs" />
     <Compile Include="Controllers\PartnershipController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +198,7 @@
     <Compile Include="Helpers\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Models\BrewerPartial.cs" />
     <Compile Include="Models\CoffeePartial.cs" />
+    <Compile Include="Models\ContactUsForm.cs" />
     <Compile Include="Models\ContentTypes\AboutUs.cs" />
     <Compile Include="Models\AboutUsViewModel.cs" />
     <Compile Include="Models\ContentTypes\Accessory.cs" />
@@ -308,6 +316,13 @@
     <Content Include="Views\Shared\DisplayTemplates\AboutUsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArticleListingItem.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Product.cshtml" />
+    <Content Include="Views\ContactUsWidget\Default.cshtml" />
+    <Content Include="Views\LatestBlogPostsWidget\Default.cshtml" />
+    <Content Include="WidgetsConfiguration\ContactUs.json" />
+    <Content Include="WidgetsConfiguration\LatestBlogPosts.json" />
+    <Content Include="Views\LandingPage\Empty.cshtml" />
+    <Content Include="Views\LandingPage\View.cshtml" />
+    <Content Include="Views\Shared\_EmptyLayout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

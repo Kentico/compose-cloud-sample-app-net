@@ -1,0 +1,8 @@
+﻿@using KenticoCloud
+@using KenticoCloud.Compose
+@model KenticoCloud.Delivery.ContentItem
+@{
+    ViewBag.Title = Model.System.Name;
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+@Html.Kentico().EditableArea("LandingPageContent", Model.System.Id)

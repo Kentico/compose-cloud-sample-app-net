@@ -42,5 +42,12 @@ namespace DancingGoat.Controllers
                 }
             }
         }
+
+
+        [Route("preview/{urlslug}")]
+        public async Task<ActionResult> Preview(string urlSlug)
+        {
+            return await ShowPage(urlSlug, "article", "Show");
+        }
     }
 }

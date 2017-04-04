@@ -1,0 +1,15 @@
+﻿@model IEnumerable<DancingGoat.Models.Article>
+@{
+    var i = 1;
+    var englishCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-us");
+}
+<h2 class="h2 col-lg-12">Latest blog posts</h2>
+@foreach (var article in @Model)
+{
+   @Html.DisplayFor((vm) => article, templateName: "ArticleListingItem")
+    if (i % 4 == 0)
+    {
+        <div class="clear"></div>
+    }
+    i++;
+}
