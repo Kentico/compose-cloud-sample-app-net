@@ -53,10 +53,9 @@ If you already have a Kentico Cloud account, you can connect this sample applica
 
 After you run the application, you will be able to see all project content including the unpublished version of content items.
 
-For more information about the integrations with the Delivery API and Personalization API, see the following:
+For more information about the integrations with the Delivery API, see the following:
 
 * [Delivery .NET SDK documentation](https://github.com/Kentico/delivery-sdk-net#using-the-deliveryclient) on using the `DeliveryClient`
-* [Personalization .NET SDK documentation](https://github.com/Kentico/personalization-sdk-net#basic-scenarios) on using the `PersonalizationClient`
 
 ## Content administration
 
