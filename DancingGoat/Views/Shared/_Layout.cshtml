@@ -50,9 +50,18 @@
                 </div>
             </div>
         </header>
-        <div class="container">
-            @RenderBody()
-        </div>
+        @if (ViewBag.PageType != "LandingPage")
+        {
+            <div class="container">
+                @RenderBody()
+            </div>
+        }
+        else
+        {
+            <div class="">
+                @RenderBody()
+            </div>
+        }
     </div>
     <div class="footer-wrapper">
         <footer role="contentinfo">

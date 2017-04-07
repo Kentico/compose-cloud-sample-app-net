@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: 'PT Serif';
   font-style: normal;
   font-weight: 700;
@@ -5127,6 +5127,12 @@ dd.product-price--retail {
 .icon-me-exception:before {
   content: "\e693";
 }
+.widgets-toolbar .toolbar-widget.widget-type-latestblogposts:before {
+  content: "\e710";
+}
+.widgets-toolbar .toolbar-widget.widget-type-contactus:before {
+  content: "\e723";
+}
 .icon-crosshair {
   position: relative;
   display: inline-block;
@@ -5783,6 +5789,44 @@ footer {
 }
 .banner-text p {
   margin: 0;
+}
+/*# Landing page*/
+.landing-page--container {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+.landing-page p,
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4,
+.landing-page form,
+.landing-page ul,
+.landing-page li {
+  text-align: center;
+}
+.landing-page h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.landing-page .banner-text {
+  max-width: 16rem;
+}
+.landing-page .banner-section {
+  margin-bottom: 0px;
+  padding-top: 16.5rem;
+}
+.landing-page .steps {
+  background-color: #fff7f7;
+}
+.landing-page .steps .widgets-widget img {
+  max-width: 160px;
+}
+.landing-page .lectors {
+  border-bottom: 1px solid #f1d3d3;
+}
+.landing-page .lectors .widgets-widget img {
+  max-width: 200px;
 }
 /*# Our story #*/
 .ourstory-section {
