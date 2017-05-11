@@ -23,7 +23,7 @@ Task("Publish")
     MSBuild("../DancingGoat", new MSBuildSettings
     {
       Configuration = config,
-      OutputDirectory = "../publish/DancingGoat"
+      OutDir = "../publish/DancingGoat"
     });
     Zip("../publish/DancingGoat", "../publish/DancingGoat.zip");
 
