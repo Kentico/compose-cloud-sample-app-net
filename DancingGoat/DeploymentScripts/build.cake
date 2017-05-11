@@ -20,12 +20,7 @@ Task("Publish")
     CleanDirectory("../publish/");
     CreateDirectory("../publish/");
     
-    MSBuild("../DancingGoat", new MSBuildSettings
-    {
-      Configuration = config,
-      OutDir = "../publish/DancingGoat"
-    });
-    Zip("../publish/DancingGoat", "../publish/DancingGoat.zip");
+    Zip("../bin", "../publish/DancingGoat.zip");
 
     if (TeamCity.IsRunningOnTeamCity) 
         TeamCity.PublishArtifacts(MakeAbsolute(File("../publish/DancingGoat.zip")).FullPath);
@@ -33,9 +28,9 @@ Task("Publish")
 
 Task("Build")
   .Does(() => {
-    NuGetRestore("../DancingGoat.sln");
+    NuGetRestore("../../DancingGoat.sln");
     
-    MSBuild("../DancingGoat.sln", new MSBuildSettings
+    MSBuild("../../DancingGoat.sln", new MSBuildSettings
     {
       Verbosity = Verbosity.Minimal,
       ToolVersion = MSBuildToolVersion.VS2015,
