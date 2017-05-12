@@ -18,7 +18,7 @@ Task("Deploy")
         Source = new PackageProvider
         {
             Direction = Direction.source,
-            Path = MakeAbsolute(File("../publish/DancingGoat.zip")).FullPath
+            Path = MakeAbsolute(File("../../publish/DancingGoat.zip")).FullPath
         },
         Destination = new AutoProvider
         {
