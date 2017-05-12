@@ -8,6 +8,8 @@ var computer = Argument<string>("computer", "");
 Task("Deploy")
   .Does(() =>
   {
+	Zip("../../publish/DancingGoat/_PublishedWebsites/DancingGoat", "../../publish/DancingGoat.zip");
+
     MsDeploy(new MsDeploySettings
     {
         Verb = Operation.Sync,
