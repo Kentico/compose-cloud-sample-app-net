@@ -8,6 +8,7 @@ var computer = Argument<string>("computer", "");
 Task("Deploy")
   .Does(() =>
   {
+	CopyDirectory("../bin/roslyn", "../../publish/DancingGoat/_PublishedWebsites/DancingGoat/bin/roslyn");
 	Zip("../../publish/DancingGoat/_PublishedWebsites/DancingGoat", "../../publish/DancingGoat.zip");
 
     MsDeploy(new MsDeploySettings
