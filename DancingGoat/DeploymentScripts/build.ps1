@@ -44,15 +44,9 @@ Param(
     [string]$Target = "Default",
     [ValidateSet("Release", "Debug")]
     [string]$Configuration = "Release",
-    [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
-    [string]$Verbosity = "Verbose",
-    [switch]$Experimental,
-    [Alias("DryRun","Noop")]
-    [switch]$WhatIf,
-    [switch]$Mono,
-    [switch]$SkipToolPackageRestore,
-    [Parameter(Position=0,Mandatory=$false,ValueFromRemainingArguments=$true)]
-    [string[]]$ScriptArgs
+    [string]$ProjectId,
+    [string]$PreviewToken,
+    [string]$PublishSettings
 )
 
 [Reflection.Assembly]::LoadWithPartialName("System.Security") | Out-Null
@@ -92,26 +86,6 @@ $CAKE_EXE = Join-Path $TOOLS_DIR "Cake/Cake.exe"
 $NUGET_URL = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
 $PACKAGES_CONFIG = Join-Path $TOOLS_DIR "packages.config"
 $PACKAGES_CONFIG_MD5 = Join-Path $TOOLS_DIR "packages.config.md5sum"
-
-# Should we use mono?
-$UseMono = "";
-if($Mono.IsPresent) {
-    Write-Verbose -Message "Using the Mono based scripting engine."
-    $UseMono = "-mono"
-}
-
-# Should we use the new Roslyn?
-$UseExperimental = "";
-if($Experimental.IsPresent -and !($Mono.IsPresent)) {
-    Write-Verbose -Message "Using experimental version of Roslyn."
-    $UseExperimental = "-experimental"
-}
-
-# Is this a dry run?
-$UseDryRun = "";
-if($WhatIf.IsPresent) {
-    $UseDryRun = "-dryrun"
-}
 
 # Make sure tools folder exists
 if ((Test-Path $PSScriptRoot) -and !(Test-Path $TOOLS_DIR)) {
@@ -185,5 +159,5 @@ if (!(Test-Path $CAKE_EXE)) {
 
 # Start Cake
 Write-Host "Running build script..."
-Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
+& "$CAKE_EXE" "$Script" -target="$Target" -projectId="$ProjectId" -previewToken="$PreviewToken" -publishSettings="$PublishSettings"
 exit $LASTEXITCODE
